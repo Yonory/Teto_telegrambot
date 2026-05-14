@@ -74,7 +74,7 @@ if __name__ == "__main__":
     Path("templates").mkdir(exist_ok=True)
     Path("static").mkdir(exist_ok=True)
     
-    print("🚀 Teto Gallery запущена!")
-    print("📱 Главная страница: http://localhost:8000")
-    print("🔌 API: http://localhost:8000/api/info")
+    print("Teto Gallery запущена!")
+    print("Главная страница: http://localhost:8000")
+    print("API: http://localhost:8000/api/info")
     app.run(host="0.0.0.0", port=8000, debug=True)
