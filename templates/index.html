@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎵 Teto Gallery</title>
+    <title>Teto Gallery</title>
     <style>
         * {
             margin: 0;
@@ -183,13 +183,13 @@
 <body>
     <div class="container">
         <header>
-            <h1>🎵 Kasane Teto Gallery</h1>
+            <h1>Kasane Teto Gallery</h1>
             <p class="subtitle">重音テト アートギャラリー</p>
         </header>
 
         <div class="controls">
-            <button class="btn" onclick="showRandom()">🎲 Случайная картинка</button>
-            <button class="btn" onclick="loadGallery()">🔄 Обновить</button>
+            <button class="btn" onclick="showRandom()">Случайная картинка</button>
+            <button class="btn" onclick="loadGallery()">Обновить</button>
             <div class="counter" id="counter">Загрузка...</div>
         </div>
 
@@ -218,7 +218,7 @@
                 const data = await response.json();
                 
                 // Обновляем счётчик
-                counter.textContent = `📸 Всего изображений: ${data.total}`;
+                counter.textContent = `Всего изображений: ${data.total}`;
                 
                 // Очищаем галерею
                 gallery.innerHTML = '';
@@ -239,7 +239,7 @@
                 });
                 
             } catch (error) {
-                gallery.innerHTML = '<div class="loading">❌ Ошибка загрузки</div>';
+                gallery.innerHTML = '<div class="loading">Ошибка загрузки</div>';
                 console.error('Ошибка:', error);
             }
         }
