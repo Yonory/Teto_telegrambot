@@ -1,4 +1,4 @@
-# 🎵 Teto Gallery - Kasane Teto Art Collection
+# Teto Gallery - Kasane Teto Art Collection
 
 > Веб-галерея и Telegram бот для просмотра артов Касанэ Тето (重音テト)
 
