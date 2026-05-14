@@ -5,7 +5,7 @@ IMAGES_DIR="images"
 
 cd $IMAGES_DIR
 
-echo "Скачиваю ещё арты Тето..."
+echo "Скачиваю арты Тето..."
 
 # Продолжаем нумерацию с 21
 wget -q --show-progress "$BASE_URL/cheonha87.jpg" -O teto_21.jpg
@@ -40,6 +40,6 @@ wget -q --show-progress "$BASE_URL/takunama.jpg" -O teto_49.jpg
 wget -q --show-progress "$BASE_URL/uli.jpg" -O teto_50.jpg
 
 echo ""
-echo "✅ Готово! Скачано ещё 30 изображений"
-echo "📊 Всего в галерее:"
+echo "Готово! Скачано ещё 30 изображений"
+echo "Всего в галерее:"
 ls -1 | wc -l
