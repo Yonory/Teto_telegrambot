@@ -1,83 +1,119 @@
-# Teto Gallery - Kasane Teto Art Collection
+#  Teto Gallery — Kasane Teto Art Collection
 
-> Веб-галерея и Telegram бот для просмотра артов Касанэ Тето (重音テト)
+> A full-stack web gallery and Telegram bot for browsing Kasane Teto (重音テト) artwork.
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![Flask](https://img.shields.io/badge/Flask-3.0-green)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-## О проекте
+## About
 
-Teto Gallery - это full-stack проект, состоящий из:
--  **Веб-галереи** (HTML/CSS/JS) для просмотра артов в браузере
--  **REST API** (Flask) для управления изображениями
--  **Telegram бота** для получения случайных артов
+This project was built to practice full-stack development and server infrastructure.  
+It consists of three components working together:
 
-## Возможности
+- **Web gallery** — browse 40 artworks in the browser
+- **REST API** — Flask backend serving images as JSON
+- **Telegram bot** — get a random artwork with `/teto` command
 
-- Просмотр галереи из 40 артов Касанэ Тето
-- Получение случайного арта по кнопке
-- Telegram бот с командой `/teto`
-- REST API с JSON endpoints
-- Адаптивный дизайн (работает на телефоне)
-- Модальное окно для просмотра в полный размер
+The main goal was to learn:
+- Python web development
+- REST API design with Flask
+- Telegram Bot API
+- Nginx as a static file server
+- Docker containerization
+- Frontend-to-backend communication
 
-## Технологии
+## Tech Stack
 
 **Backend:**
 - Python 3.12
 - Flask (REST API)
-- python-telegram-bot (Telegram Bot API)
+- python-telegram-bot
 
 **Frontend:**
-- HTML5
-- CSS3 (градиенты, анимации, grid layout)
-- Vanilla JavaScript (fetch API)
+- HTML5 / CSS3 / Vanilla JavaScript
+- Responsive design, modal viewer, CSS grid
 
-**Data:**
-- 40 изображений из Archive.org
+**Infrastructure:**
+- Nginx (static file server)
+- Docker
+- ngrok (local tunnel for bot webhook)
 
-### Требования
+## Project Structure
 
+```
+Teto_telegrambot/
+├── api.py              # Flask REST API
+├── bot.py              # Telegram bot
+├── templates/          # HTML/CSS/JS (frontend)
+├── images/             # Artwork files
+├── download.sh         # Image downloader script
+├── download_more.sh    # Extended downloader
+└── requirements.txt
+```
+
+## Getting Started
+
+### Requirements
 - Python 3.12+
-- pip
-- virtualenv
+- Telegram Bot Token
 
-### Установка
+### Installation
 
-1. **Клонируем репозиторий:**
 ```bash
-git clone https://github.com/yonory/teto-project.git
-cd teto-project
-```
+git clone https://github.com/Yonory/Teto_telegrambot.git
+cd Teto_telegrambot
 
-2. **Создаем виртуальное окружение:**
-```bash
 python3 -m venv venv
-source venv/bin/activate  # Linux/Mac
-# или
-venv\Scripts\activate  # Windows
-```
-
-3. **Установка зависимости:**
-```bash
+source venv/bin/activate   # Linux/Mac
 pip install -r requirements.txt
 ```
 
-4. **Скачиваем изображения (опционально):**
+### Download images (optional)
+
 ```bash
 chmod +x download.sh
 ./download.sh
 ```
 
-### Запуск
+### Run Flask API
 
-**1. Запускаем Flask API:**
 ```bash
-source venv/bin/activate
 python api.py
 ```
 
-API будет доступен на: `http://localhost:8000`
+API available at: `http://localhost:8000`
 
-# Добавлю остальную инструкцию позже
+### Run Telegram Bot
+
+```bash
+# Set your bot token in bot.py
+python bot.py
+```
+
+## API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/images` | List all images |
+| GET | `/images/random` | Get random image |
+
+## Telegram Bot Commands
+
+| Command | Description |
+|---------|-------------|
+| `/start` | Welcome message |
+| `/teto` | Get a random Kasane Teto artwork |
+
+## What I Learned
+
+- How Telegram bots work with webhook and polling
+- How to build and serve a REST API with Flask
+- How Nginx serves static files
+- How Docker containerizes a Python application
+- Frontend and backend communication via fetch API
+- Git and GitHub workflow
+
+## License
+
+This project is created for educational purposes.
